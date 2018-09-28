@@ -17,11 +17,8 @@ def cart(request):
     uname = request.session['uname']
     uid = UserInfo.objects.get(username=uname).id
     ucart = CartInfo.objects.filter(user_id_id=uid)  # 此用户对应的cart对象
-    goods_list = []
-    for cart in ucart:
-        goods_list.append(GoodsInfo.objects.get(id=cart.goods_id_id))
-
-    context = {'cart': goods_list, 'username': uname, 'uid': uid}
+    count = ucart.count()
+    context = {'ucart': ucart, 'username': uname, 'uid': uid, 'cart_count': count}
     return render(request, 'cart/cart.html', context)
 
 
@@ -39,11 +36,19 @@ def add_to_cart(request, gid, amount):
         cart.goods_id_id = int(gid)
         cart.amount = amount
     cart.save()
-    return redirect('/cart/')
+    if request.is_ajax():
+        count = CartInfo.objects.filter(user_id_id=uid).count()
+        data = {'count1': count}
+        return JsonResponse(data)
+    else:
+        return redirect('/cart/')
 
 
+@decorator
 def delete(request, id):
-    cart = CartInfo.objects.get(goods_id_id=id)
+    uname = request.session['uname']
+    uid = UserInfo.objects.get(username=uname).id
+    cart = CartInfo.objects.filter(user_id_id=uid, goods_id_id=int(id))[0]
     cart.delete()
     return redirect('/cart/')
 
@@ -71,6 +76,10 @@ def edit(request, cart_id, amount):
         cart.amount = int(amount)
         cart.save()
         count = cart.amount
+        data = {'ok': 0}
     except Exception as e:
         data = {'ok': count}
     return JsonResponse(data)
+
+
+

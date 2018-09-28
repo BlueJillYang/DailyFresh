@@ -4,6 +4,8 @@ from df_user.user_decorator import decorator
 from django.core.paginator import Paginator
 from .models import *
 from django.shortcuts import render
+from df_user.models import *
+from cart.models import *
 
 # Create your views here.
 
@@ -28,13 +30,17 @@ def index(request):
 
     goods6 = GoodsInfo.objects.filter(type_id=6)
     goods61 = GoodsInfo.objects.filter(type_id=6).order_by('-id')
+
+    uid = UserInfo.objects.get(username=uname).id
+    ucart = CartInfo.objects.filter(user_id_id=uid)  # 此用户对应的cart对象
+    count = ucart.count()
     context = {'title': '首页', 'uname': uname,
                'goods1': goods1, 'goods2': goods2,
                'goods11': goods11, 'goods21': goods21,
                'goods3': goods3, 'goods4': goods4,
                'goods31': goods31, 'goods41': goods41,
                'goods51': goods51, 'goods61': goods61,
-               'goods5': goods5, 'goods6': goods6}
+               'goods5': goods5, 'goods6': goods6, 'cart_count': count}
     return render(request, 'goods/index.html', context)
 
 
@@ -44,8 +50,13 @@ def detail(request, id):
     type = TypeInfo.objects.get(id=goods.type_id)
     goods.click += 1
     goods.save()
+
+    uid = UserInfo.objects.get(username=uname).id
+    ucart = CartInfo.objects.filter(user_id_id=uid)  # 此用户对应的cart对象
+    count = ucart.count()
+
     list = GoodsInfo.objects.filter(type_id=goods.type_id).order_by('-id')[:2]
-    context = {'title': '商品详情', 'uname': uname, 'goods': goods, 'list': list, 'type': type}
+    context = {'title': '商品详情', 'uname': uname, 'goods': goods, 'list': list, 'type': type, 'cart_count': count}
     response = render(request, 'goods/detail.html', context)
 
     # 最近浏览功能 点了详情页面 视为最近浏览
@@ -81,7 +92,13 @@ def list(request, type, sort, pagenumber):  # type类别 id编号 sort排序规�
         page = paginator.page(1)
     else:
         page = paginator.page(pagenumber)
-    context = {'title': '商品列表', 'uname': uname, 'list': list, 'latest': latest, 'page': page, 'type': Type}
+
+    uid = UserInfo.objects.get(username=uname).id
+    ucart = CartInfo.objects.filter(user_id_id=uid)  # 此用户对应的cart对象
+    count = ucart.count()
+
+    context = {'title': '商品列表', 'uname': uname, 'list': list, 'latest': latest, 'page': page, 'type': Type, 'cart_count': count}
     return render(request, 'goods/list.html', context)
+
 
 

@@ -8,6 +8,7 @@
     <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/static/js/slide.js"></script>
+    <script type="text/javascript" src="/static/js/count.js"></script>
 </head>
 <body>
 <div class="header_con">
@@ -18,7 +19,7 @@
                 欢迎您：<em></em>
             </div>
             <div class="login_btn fl">
-                欢迎您: <a href="/user_center/">{{ uname }}</a>
+                欢迎您:<a href="/user_center/">{{ uname }}</a>
                 <span>|</span>
                 <a href="/login/">登录</a>
                 <span>|</span>
@@ -46,7 +47,7 @@
     </div>
     <div class="guest_cart fr">
         <a href="/cart/" class="cart_name fl">我的购物车</a>
-        <div class="goods_count fl" id="show_count">1</div>
+        <div class="goods_count fl" id="show_count" value="{{ cart_count }}"></div>
     </div>
 </div>
 
