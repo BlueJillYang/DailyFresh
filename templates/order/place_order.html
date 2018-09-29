@@ -1,5 +1,9 @@
 {% extends 'usercenter.html' %}
 {% block body %}
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/order.js"></script>
+
 	<div class="search_bar clearfix">
 		<a href="/index/" class="logo fl"><img src="/static/images/logo.png"></a>
 		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;提交订单</div>
@@ -13,7 +17,7 @@
 
 	<div class="common_list_con clearfix">
 		<dl>
-			<dt>寄送到：</dt>
+			{{ cart_ids }}<dt>寄送到：</dt>
 			<dd><input type="radio" name="" checked="">{{ users.uaddress }}({{ username }}收) {{ users.phonecall }}</dd>
 		</dl>
 		<a href="/user_center_site/" class="edit_site">编辑收货地址</a>
@@ -44,38 +48,31 @@
 			<li class="col04">数量</li>
 			<li class="col05">小计</li>		
 		</ul>
+        {% for c in cart %}
 		<ul class="goods_list_td clearfix">
-			<li class="col01">1</li>			
-			<li class="col02"><img src="images/goods/goods012.jpg"></li>
-			<li class="col03">奇异果</li>
-			<li class="col04">500g</li>
-			<li class="col05">25.80元</li>
-			<li class="col06">1</li>
-			<li class="col07">25.80元</li>	
+			<li class="col01">{{ forloop.counter }}</li>
+			<li class="col02"><img src="/static/media/{{ c.goods_id.picture }}"></li>
+			<li class="col03">{{ c.goods_id.g_title }}</li>
+			<li class="col04">{{ c.goods_id.unit }}</li>
+			<li class="col05">{{ c.goods_id.price }}元</li>
+			<li class="col06">{{ c.amount }}</li>
+			<li class="col07">{{ c.goods_id.price }}元</li>
 		</ul>
-		<ul class="goods_list_td clearfix">
-			<li class="col01">2</li>			
-			<li class="col02"><img src="images/goods/goods003.jpg"></li>
-			<li class="col03">大兴大棚草莓</li>
-			<li class="col04">500g</li>
-			<li class="col05">16.80元</li>
-			<li class="col06">1</li>
-			<li class="col07">16.80元</li>	
-		</ul>
+        {% endfor %}
 	</div>
 
 	<h3 class="common_title">总金额结算</h3>
 
 	<div class="common_list_con clearfix">
 		<div class="settle_con">
-			<div class="total_goods_count">共<em>2</em>件商品，总金额<b>42.60元</b></div>
-			<div class="transit">运费：<b>10元</b></div>
-			<div class="total_pay">实付款：<b>52.60元</b></div>
+			<div class="total_goods_count">共<em id="total_count"></em>件商品，总金额<b id="gtotal">元</b></div>
+			<div class="transit">运费：<b id="transit">10元</b></div>
+			<div class="total_pay">实付款：<b id="final_total"></b></div>
 		</div>
 	</div>
 
 	<div class="order_submit clearfix">
-		<a href="javascript:;" id="order_btn">提交订单</a>
+		<a href="/order/create_order/" id="order_btn">提交订单</a>
 	</div>	
 
 	<div class="footer">
@@ -88,7 +85,7 @@
 			<span>|</span>
 			<a href="#">友情链接</a>		
 		</div>
-		<p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+		<p>CopyRight © 2018 天天生鲜信息技术有限公司 All Rights Reserved</p>
 		<p>电话：010-****888    京ICP备*******8号</p>
 	</div>
 
@@ -108,10 +105,10 @@
 
 				setTimeout(function(){
 					$('.popup_con').fadeOut('fast',function(){
-						window.location.href = 'index.html';
-					});	
+						window.location.href = '/index/';
+					});
 				},3000)
-				
+
 			});
 		});
 	</script>

@@ -34,7 +34,10 @@ def add_to_cart(request, gid, amount):
         cart = CartInfo()
         cart.user_id_id = uid
         cart.goods_id_id = int(gid)
-        cart.amount = amount
+        if int(amount) > cart.goods_id.reserve:
+            cart.amount = cart.goods_id.reserve
+        else:
+            cart.amount = amount
     cart.save()
     if request.is_ajax():
         count = CartInfo.objects.filter(user_id_id=uid).count()
@@ -54,17 +57,23 @@ def delete(request, id):
 
 
 @decorator
-def buy(request, gid):
+def buy(request, gid, amount):
     uname = request.session['uname']
     uid = UserInfo.objects.get(username=uname).id
     cart = CartInfo.objects.filter(user_id_id=uid, goods_id_id=gid)
     if len(cart) != 0:
-        cart[0].amount += 1
+        cart[0].amount += int(amount)
+        if cart[0].amount > cart[0].goods_id.reserve:
+            cart[0].amount = cart[0].goods_id.reserve
+        cart[0].save()
     else:
         cart = CartInfo()
         cart.user_id_id = uid
         cart.goods_id_id = gid
-        cart.amount = 1
+        if int(amount) > cart.goods_id.reserve:
+            cart.amount = cart.goods_id.reserve
+        else:
+            cart.amount = amount
         cart.save()
     return redirect('/cart/')
 
@@ -73,11 +82,14 @@ def buy(request, gid):
 def edit(request, cart_id, amount):
     try:
         cart = CartInfo.objects.get(goods_id_id=int(cart_id))
-        cart.amount = int(amount)
+        if int(amount) > cart.goods_id.reserve:
+            cart.amount = cart.goods_id.reserve
+        else:
+            cart.amount = int(amount)
         cart.save()
-        count = cart.amount
         data = {'ok': 0}
     except Exception as e:
+        count = int(amount)
         data = {'ok': count}
     return JsonResponse(data)
 

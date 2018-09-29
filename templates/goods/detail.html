@@ -29,6 +29,14 @@
                 $('.num_show').val(num);
                 $('#gtotal').text(total.toFixed(2)+'元');
                 {#$('#add_cart').attr('herf', '/cart/add'+$('#gid')val());#}
+                {#if(parseInt($('#reserve').text()) < num){#}
+                {#    alert('库存:'+$('#reserve').text()+',库存不足,抱歉');#}
+                //}
+                if((parseFloat($('#reserve').text())) < parseFloat($(this).val())){
+                    alert('库存:'+$('#reserve').text()+', 库存不足 抱歉');
+                    $('.num_show').val(parseFloat($('#reserve').text())) ;
+                }
+
             });
 
             $('#add_cart').click(function () {
@@ -37,6 +45,13 @@
                 $.get('/cart/add'+gid+'_'+amount, function (data) {
                     $('#show_count').html(data.count1);
                 });
+            });
+
+            $('.buy_btn').click(function () {
+                amount=parseInt($('.num_show').val());
+                gid=$(this).attr('id');
+                $(this).prop('href','/cart/buy'+gid+'_'+amount);
+                //$.get('/cart/buy'+gid+'_'+amount);
             });
 
         });
@@ -70,9 +85,9 @@
 			</div>
 			<div class="total">总价：<em id="gtotal">{{ goods.price }}</em></div>  {# id="gtotal" js对应 #}
             <span></span>
-            <em>库存:{{ goods.reserve }}</em>
+            库存: <em id="reserve">{{ goods.reserve }}</em>
 			<div class="operate_btn">
-				<a href="/cart/buy{{ goods.id }}" class="buy_btn" id="{{ goods.id }}">立即购买</a>
+				<a href="/cart/buy{{ goods.id }}_1" class="buy_btn" id="{{ goods.id }}">立即购买</a>
 				<a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
 			</div>
 		</div>

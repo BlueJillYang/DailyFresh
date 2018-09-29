@@ -24,9 +24,9 @@
 	</ul>
     {% for cart in ucart %}
 	<ul class="cart_list_td clearfix" id="{{ cart.goods_id.id }}">
-		<li class="col01"><input type="checkbox" name="" checked="checked"></li>
+		<li class="col01"><input type="checkbox" name="check" checked=""></li>
         <li class="col02"><a href="/detail/{{ cart.goods_id.id }}" class="pic"><img src="/static/media/{{ cart.goods_id.picture }}"></a></li>
-		<li class="col03">{{ cart.goods_id.g_title }}<br><em>{{ cart.goods_id.price }}元/{{ cart.goods_id.unit }}</em><br><em>库存:{{ cart.goods_id.reserve }}</em></li>
+		<li class="col03" id="{{ cart.goods_id.g_title }}">{{ cart.goods_id.g_title }}<br><em>{{ cart.goods_id.price }}元/{{ cart.goods_id.unit }}</em><br>库存:<em id="reserve">{{ cart.goods_id.reserve }}</em></li>
 		<li class="col04">{{ cart.goods_id.unit }}</li>
         <li class="col05"><em id="gprice">{{ cart.goods_id.price }}元</em></li>
 		<li class="col06">
@@ -44,8 +44,8 @@
 	<ul class="settlements">
 		<li class="col01"><input type="checkbox" name="check_all" id="check_all" checked=""></li>
         <li class="col02"><em>全选</em></li>
-        <li class="col03">合计(不含运费)：<span>¥</span><em id="gtotal"></em><br>共计<b><em id="total_count1">1</em></b>件商品</li>
-		<li class="col04"><a href="/order/">去结算</a></li>
+        <li class="col03">合计(不含运费)：<span>¥</span><em id="gtotal"></em><br>共计<b><em id="total_count1">0</em></b>件商品</li>
+		<li class="col04" id="pay"><a href="javascript:;" id="pay_btn">去结算</a></li>
 	</ul>
 	<div class="footer">
 		<div class="foot_link">
