@@ -23,8 +23,6 @@ $(function () {
             alert('买一个吧,亲! 再想想');
             $(this).val(1);
             return;
-        }else if(count>200){
-            alert('土豪啊!')
         };
         //alert(parseFloat($('#gtotal').text())*20);
         //判断库存
@@ -33,8 +31,8 @@ $(function () {
             gname=$(this).parent().prop('id');
             count=$(this).parent().next().next().next().find('input').val();
             if(parseFloat(reserve) < parseFloat(count)){
-                alert(gname+'库存:'+$(this).text()+', 库存不足,抱歉!');
-                //$(this).parent().next().next().next().find('input').val(reserve);
+                alert(gname+'库存:'+$(this).text()+', 库存不足,已修改为最大可购量,抱歉!');
+                $(this).parent().next().next().next().find('input').val(reserve);
                 $('#pay_btn').attr('disabled', true);
             }
         });

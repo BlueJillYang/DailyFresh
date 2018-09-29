@@ -144,7 +144,9 @@ def user_center_site_handle(request):
 
 @decorator
 def user_center_order(request):
-    return render(request, 'df_user/user_center_order.html')
+    uname = request.session.get('uname', '')
+    context = {'username': uname}
+    return render(request, 'df_user/user_center_order.html', context)
 
 
 def exit_handle(request):
