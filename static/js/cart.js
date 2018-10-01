@@ -26,17 +26,22 @@ $(function () {
         };
         //alert(parseFloat($('#gtotal').text())*20);
         //判断库存
-        $('#reserve').each(function () {
-            reserve=parseFloat($(this).text());
-            gname=$(this).parent().prop('id');
-            count=$(this).parent().next().next().next().find('input').val();
-            if(parseFloat(reserve) < parseFloat(count)){
-                alert(gname+'库存:'+$(this).text()+', 库存不足,已修改为最大可购量,抱歉!');
-                $(this).parent().next().next().next().find('input').val(reserve);
-                $('#pay_btn').attr('disabled', true);
-            }
-        });
-
+        // $('#reserve').each(function () {
+        //     reserve=parseFloat($(this).text());
+        //     gname=$(this).parent().prop('id');
+        //     count=$(this).parent().next().next().next().find('input').val();
+        //     if(parseFloat(reserve) < parseFloat(count)){
+        //         $(this).parent().next().next().next().find('input').val(reserve);
+        //         alert(gname+'库存:'+$(this).text()+', 库存不足,已修改为最大可购量,抱歉!');
+        //         //$('#pay_btn').attr('disabled', true);
+        //     }
+        // });
+        reserve=$(this).parent().prop('id');
+        if(count>parseFloat(reserve))
+        {
+            alert('库存不足,系统已自动修改为最大数量!');
+            $(this).val(parseFloat(reserve));
+        };
         //计算小计和总计
         total1=0;
         total_count=0;
@@ -170,5 +175,7 @@ $(function () {
         }
         $(this).children().prop('href','/order/?'+cid_list);
     });
+
+
 });
 

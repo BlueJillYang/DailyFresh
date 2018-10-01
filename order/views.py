@@ -26,11 +26,12 @@ def order(request):
 
     cart = []
     cart_string = ''
-    cart_list = [str(c) for c in cart]
-    cart_string = ','.join(cart_list)
-    request.session['cart_string'] = cart_string
     for cart_id in cart_ids:
         cart.append(CartInfo.objects.filter(user_id_id=users.id, goods_id_id=cart_id)[0])
+
+    cart_list = [str(c) for c in cart_ids]
+    cart_string = ','.join(cart_list)
+    request.session['cart_string'] = cart_string
 
     context = {'username': uname, 'users': users, 'cart': cart}
     return render(request, 'order/place_order.html', context)
@@ -44,6 +45,7 @@ def create(request):
     uid = users.id
     # 接收参数
     cart_ids = request.session.get('cart_string', '').split(',')
+
     cart = []
     for cart_id in cart_ids:
         cart.append(CartInfo.objects.filter(user_id_id=users.id, goods_id_id=int(cart_id))[0])
@@ -57,26 +59,31 @@ def create(request):
 
     # 创建order对象
     order = OrderInfo()
-    order_detail = OrderDetailInfo()
     try:
         # order信息
         now = datetime.now()
-        order.oid = int(now.strftime('%Y%m%d%H%M%S'))*(10**-14) + int(uid)
+        order.oid = int(now.strftime('%Y%m%d%H%M%S')[5:] + str(uid))
         order.user_id = users.id
+        order.odata = now
         order.oIsPay = True
         order.ototal = total
         order.oaddress = users.uaddress
         order.save()
 
         # orderdetail信息
+        detail_list = []
         for c in cart:
-            order_detail.id = 1
-            order_detail.price = c.goods_id.price
+            order_detail = OrderDetailInfo()
+            order_detail.price = c.goods_id.price * c.amount  # 小计
             order_detail.count = c.amount
             order_detail.goods_id = c.goods_id_id
-            order_detail.order_id = order.id
+            order_detail.order_id = order.oid
             order_detail.save()
+
+            # 添加detail 列表 发送到前端
+            # detail_list.append(order_detail)
     except Exception as e:
+        transaction.savepoint_rollback(transPoint)
         # 异常就回滚数据 报错
         message = e
     else:
@@ -88,7 +95,11 @@ def create(request):
             c.delete()
         # 成功就提交
         message = 'done'
-    context = {'mes': message}
     # return redirect('/user_center_order/')
+    if message == 'done':
+        return redirect('/user_center_order')
+
+    context = {'msg': message}
     return render(request, 'order/pay.html', context)
+
 

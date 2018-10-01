@@ -9,6 +9,7 @@
     <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/static/js/slide.js"></script>
     <script type="text/javascript" src="/static/js/count.js"></script>
+    <script type="text/javascript" src="/static/js/verification.js"></script>
 </head>
 <body>
 <div class="header_con">
@@ -19,19 +20,19 @@
                 欢迎您：<em></em>
             </div>
             <div class="login_btn fl">
-                欢迎您:<a href="/user_center/">{{ uname }}</a>
+                欢迎您:<a href="/user_center/" id="username1">{{ uname }}</a>
                 <span>|</span>
-                <a href="/login/">登录</a>
+                <a href="/login/" id="login1">登录</a>
                 <span>|</span>
-                <a href="/register/">注册</a>
+                <a href="/register/" id="register1">注册</a>
             </div>
             <div class="user_link fl">
                 <span>|</span>
-                <a href="/user_center_info/">用户中心</a>
+                <a href="/user_center_info/" id="user_center1">用户中心</a>
                 <span>|</span>
-                <a href="/cart/">我的购物车</a>
+                <a href="/cart/" id="cart1">我的购物车</a>
                 <span>|</span>
-                <a href="/user_center_order/">我的订单</a>
+                <a href="/user_center_order/" id="user_center_order1">我的订单</a>
                 <span>|</span>
                 <a href="/exit/">退出</a>
             </div>

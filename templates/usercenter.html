@@ -5,6 +5,9 @@
 	<title>天天生鲜-用户中心</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/verification.js"></script>
 </head>
 <body>
 	<div class="header_con">
@@ -15,19 +18,19 @@
 					欢迎您:<a href="/user_center/">{{ username }}</a>
 				</div>
 				<div class="login_btn fl">
-					欢迎您:<a href="/user_center/">{{ username }}</a>
+					欢迎您:<a href="/user_center/" id="username1">{{ username }}</a>
 					<span>|</span>
-					<a href="/">登录</a>
+					<a href="/login/" id="login1">登录</a>
 					<span>|</span>
-					<a href="/register/">注册</a>
+					<a href="/register/" id="register1">注册</a>
 				</div>
 				<div class="user_link fl">
 					<span>|</span>
-					<a href="/user_center/">用户中心</a>
+					<a href="/user_center/" id="user_center1">用户中心</a>
 					<span>|</span>
-					<a href="/cart/">我的购物车</a>
+					<a href="/cart/" id="cart1">我的购物车</a>
 					<span>|</span>
-					<a href="/user_center_order/">我的订单</a>
+					<a href="/user_center_order/" id="user_center_order1">我的订单</a>
                     <span>|</span>
                     <a href="/exit/">退出</a>
 				</div>

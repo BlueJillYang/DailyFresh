@@ -2,7 +2,7 @@ from django.conf.urls import url
 import views
 
 urlpatterns = [
-    url(r'^$', views.login, name='login'),
+    url(r'^$', views.index, name='index'),
     url(r'^login/$', views.login, name='login'),
     url(r'^login_handle/$', views.login_handle, name='login_handle'),
     url(r'^register/$', views.register, name='register'),
@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^user_center_site/$', views.user_center_site, name='user_center_site'),
     url(r'^user_center_site_handle/$', views.user_center_site_handle, name='user_center_site_handle'),
     url(r'^user_center_order/$', views.user_center_order, name='user_center_order'),
+    url(r'^user_center_order_handle/(\d+)', views.user_center_order_handle, name='user_center_order_handle'),
     url(r'^exit/', views.exit_handle, name='exit_handle'),
 ]
 

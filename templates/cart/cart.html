@@ -30,7 +30,7 @@
 		<li class="col04">{{ cart.goods_id.unit }}</li>
         <li class="col05"><em id="gprice">{{ cart.goods_id.price }}元</em></li>
 		<li class="col06">
-			<div class="num_add">
+			<div class="num_add" id="{{ cart.goods_id.reserve }}">
 				<a href="javascript:;" id="add" class="add fl">+</a>
 				<input type="text" class="num_show fl" id="num_show" value="{{ cart.amount }}">
 				<a href="javascript:;" id="minus" class="minus fl">-</a>

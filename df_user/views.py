@@ -1,13 +1,52 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
+from django.core.paginator import Paginator
+
+from cart.models import CartInfo
 from .user_decorator import decorator
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 import hashlib
 from .models import *
 from goods.models import *
+from order.models import *
 
 # Create your views here.
+
+
+def index(request):
+    uname = request.session.get('uname', '')
+    # 首页 6大类
+    goods1 = GoodsInfo.objects.filter(type_id=1)
+    goods11 = GoodsInfo.objects.filter(type_id=1).order_by('-id')
+
+    goods2 = GoodsInfo.objects.filter(type_id=2)
+    goods21 = GoodsInfo.objects.filter(type_id=2).order_by('-id')
+
+    goods3 = GoodsInfo.objects.filter(type_id=3)
+    goods31 = GoodsInfo.objects.filter(type_id=3).order_by('-id')
+
+    goods4 = GoodsInfo.objects.filter(type_id=4)
+    goods41 = GoodsInfo.objects.filter(type_id=4).order_by('-id')
+
+    goods5 = GoodsInfo.objects.filter(type_id=5)
+    goods51 = GoodsInfo.objects.filter(type_id=5).order_by('-id')
+
+    goods6 = GoodsInfo.objects.filter(type_id=6)
+    goods61 = GoodsInfo.objects.filter(type_id=6).order_by('-id')
+
+    uid = UserInfo.objects.get(username=uname).id
+    ucart = CartInfo.objects.filter(user_id_id=uid)  # 此用户对应的cart对象
+    count = ucart.count()
+    context = {'title': '首页', 'uname': uname,
+               'goods1': goods1, 'goods2': goods2,
+               'goods11': goods11, 'goods21': goods21,
+               'goods3': goods3, 'goods4': goods4,
+               'goods31': goods31, 'goods41': goods41,
+               'goods51': goods51, 'goods61': goods61,
+               'goods5': goods5, 'goods6': goods6, 'cart_count': count}
+    return render(request, 'goods/index.html', context)
 
 
 def login(request):
@@ -104,8 +143,30 @@ def user_center(request):
 @decorator
 def user_center_order(request):
     uname = request.session.get('uname', '')
-    context = {'title': '用户中心', 'username': uname}
-    return render()
+    user1 = UserInfo.objects.get(username=uname)
+    uid = user1.id
+    order = OrderInfo.objects.filter(user_id=uid).order_by('-oid')  # 查询用户的订单 复数
+    # 页数 paginator
+    paginator = Paginator(order, 2)
+    page = paginator.page(1)
+    context = {'title': '用户中心', 'username': uname, 'page': page}
+    return render(request, 'df_user/user_center_order.html', context)
+
+
+def user_center_order_handle(request, pagenumber):
+    uname = request.session.get('uname', '')
+    uid = UserInfo.objects.get(username=uname).id
+    order = OrderInfo.objects.filter(user_id=uid).order_by('-oid')  # 查询用户的订单 复数
+    # 页数 paginator
+    paginator = Paginator(order, 2)
+    pagenumber = int(pagenumber)
+    if not pagenumber:
+        page = paginator.page(1)
+    else:
+        page = paginator.page(pagenumber)
+
+    context = {'title': '用户中心', 'username': uname, 'order': order, 'page': page}
+    return render(request, 'df_user/user_center_order.html', context)
 
 
 @decorator
@@ -140,14 +201,6 @@ def user_center_site_handle(request):
     addr.user_id = user.id
     addr.save()
     return redirect('/user_center_site/')
-
-
-@decorator
-def user_center_order(request):
-    uname = request.session.get('uname', '')
-    context = {'username': uname}
-    return render(request, 'df_user/user_center_order.html', context)
-
 
 def exit_handle(request):
     uname = request.session.get('uname', '')
