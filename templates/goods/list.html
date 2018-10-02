@@ -44,9 +44,19 @@
 
 		<div class="r_wrap fr clearfix">
 			<div class="sort_bar">
+                {% if sort == 0 %}
 				<a href="/list_1_0/" class="active">默认</a>
 				<a href="/list_1_1/">价格</a>
 				<a href="/list_1_2/">人气</a>
+                {% elif sort == 1 %}
+                <a href="/list_1_0/">默认</a>
+                <a href="/list_1_1/" class="active">价格</a>
+                <a href="/list_1_2/">人气</a>
+                {% elif sort == 2 %}
+                <a href="/list_1_0/">默认</a>
+                <a href="/list_1_1/">价格</a>
+                <a href="/list_1_2/" class="active">人气</a>
+                {% endif %}
 			</div>
 
 			<ul class="goods_type_list clearfix">

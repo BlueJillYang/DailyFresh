@@ -44,4 +44,23 @@ $(function () {
             }
         }
     });
+    $('#8').click(function () {
+        if($('#username1').text()==''){
+            if(confirm('请先登录,是否继续前往登录页面')){
+                submit();
+            }else {
+                return false;
+            }
+        }
+    });
+    $('#add_cart').click(function () {
+        if($('#username1').text()==''){
+            if(confirm('请先登录,是否继续前往登录页面')){
+                $('#add_cart').prop('href', '/login/');
+                submit();
+            }else {
+                return false;
+            }
+        }
+    });
 });

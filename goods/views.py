@@ -97,7 +97,9 @@ def list(request, type, sort, pagenumber):  # type类别 id编号 sort排序规�
     ucart = CartInfo.objects.filter(user_id_id=uid)  # 此用户对应的cart对象
     count = ucart.count()
 
-    context = {'title': '商品列表', 'uname': uname, 'list': list, 'latest': latest, 'page': page, 'type': Type, 'cart_count': count}
+    context = {'title': '商品列表', 'uname': uname, 'list': list,
+               'latest': latest, 'page': page, 'type': Type,
+               'cart_count': count, 'sort': int(sort)}
     return render(request, 'goods/list.html', context)
 
 

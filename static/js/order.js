@@ -10,7 +10,7 @@ $(function () {
         total_count++;
     });
     $('#gtotal').text(total1.toFixed(2));
-    $('#total_count1').text(total_count);
+    $('#total_count').text(total_count);
     translate=$('#transit').text();
     final=total1+parseFloat(translate);
     $('#final_total').text(final.toFixed(2));

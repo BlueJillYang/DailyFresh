@@ -18,93 +18,89 @@
         });
     </script>
 
-	<div class="breadcrumb">
-		<a href="/index/">全部分类</a>
-		<span>></span>
-		<a href="#">搜索结果</a>
-	</div>
+    <div class="main_wrap clearfix">
+        <div class="l_wrap fl clearfix">
+        </div>
 
-		<div class="r_wrap fr clearfix">
+        <div class="r_wrap fl clearfix">
 
-			<ul class="goods_type_list clearfix">
+            <ul class="goods_type_list clearfix">
+                {% for goods in page %}
+                    <li>
+                        <a href="/detail/{{ goods.object.id }}"><img src="/static/media/{{ goods.object.picture }}"></a>
+                        <h4><a href="/detail/{{ goods.object.id }}">{{ goods.object.g_title }}</a></h4>
+                        <div class="operate" id="{{ goods.object.id }}">
+                            <span class="prize">￥{{ goods.object.price }}</span>
+                            <span class="unit">{{ goods.object.price }}/{{ goods.object.unit }}</span>
+                            <a href="javascript:;" class="add_goods" id="add_goods" title="加入购物车"></a>
+                        </div>
+                    </li>
+                {% endfor %}
+                <br>
+                <div class="pagenation">
+                    {% if page.has_previous %}
+                        <a href="/search/?q={{ query }}&amp;page={{ page.previous_page_number }}"><上一页</a>
+                    {% endif %}
 
-                    {% for goods in page.object_list %}
-                        <li>
-                            <a href="/detail/{{ goods.id }}"><img src="/static/media/{{ goods.picture }}"></a>
-                            <h4><a href="/detail/{{ goods.id }}">{{ goods.g_title }}</a></h4>
-                            <div class="operate" id="{{ goods.id }}">
-                                <span class="prize">￥{{ goods.price }}</span>
-                                <span class="unit">{{ goods.price }}/{{ goods.unit }}</span>
-                                <a href="javascript:;" class="add_goods" id="add_goods" title="加入购物车"></a>
-                            </div>
-                        </li>
+                    {% for p in page.paginator.page_range %}
+                        {% if page.number == p %}
+                            <a href="/search/?q={{ query }}&amp;page={{ p }}" class="active">{{ p }}</a>
+                        {% else %}
+                            <a href="/search/?q={{ query }}&amp;page={{ p }}">{{ p }}</a>
+                        {% endif %}
                     {% endfor %}
 
-			</ul>
-			<div class="pagenation">
-				{% if page.has_previous == True %}
-					<a href="?q={{ query }}&page={{ page.previous_page_number }}">上一页</a>
-				{% endif %}
-
-				{% for i in page.paginator.page_range %}
-					{% if page.number == i %}
-					<a class="active">{{ i }}</a>
-					{% else %}
-					<a href="?q={{ query }}&page={{ i }}">{{ i }}</a>
-					{% endif %}
-				{% endfor %}
-
-				{% if page.has_next == True %}
-				<a href="?q={{ query }}&page={{ page.next_page_number }}">下一页></a>
-				{% endif %}
-			</div>
-		</div>
-</div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-{% endblock body %}
+                    {% if page.has_next %}
+                        <a href="/search/?q={{ query }}&amp;page={{ page.next_page_number }}"><上一页</a>
+                    {% endif %}
+                </div>
+        </div>
+    </div>
 
 
 
 
 
-{#    #}
-{#    #}
-{#    #}
-{#    <ul class="goods_type_list clearfix">#}
-{#    {% for goods in page %}#}
-{#        <li>#}
-{#            <a href="/detail/{{ goods.id }}"><img src="/static/media/{{ goods.picture }}"></a>#}
-{#            <h4><a href="/detail/{{ goods.id }}">{{ goods.g_title }}</a></h4>#}
-{#            <div class="operate" id="{{ goods.id }}">#}
-{#                <span class="prize">￥{{ goods.price }}</span>#}
-{#                <span class="unit">{{ goods.price }}/{{ goods.unit }}</span>#}
-{#                <a href="javascript:;" class="add_goods" id="add_goods" title="加入购物车"></a>#}
+
+{#	<div class="breadcrumb">#}
+{#		<a href="/index/">全部分类</a>#}
+{#		<span>></span>#}
+{#		<a href="#">搜索结果</a>#}
+{#	</div>#}
+{##}
+{#        <div class="r_wrap fr clearfix">#}
+{#            <div class="goods_type_list clearfix">#}
+{#                {% for goods in page %}#}
+{#                    <li>#}
+{#                        <a href="/detail/{{ goods.object.id }}"><img src="/static/media/{{ goods.object.picture }}"></a>#}
+{#                        <h4><a href="/detail/{{ goods.object.id }}">{{ goods.object.g_title }}</a></h4>#}
+{#                        <div class="operate" id="{{ goods.object.id }}">#}
+{#                            <span class="prize">￥{{ goods.object.price }}</span>#}
+{#                            <span class="unit">{{ goods.object.price }}/{{ goods.object.unit }}</span>#}
+{#                            <a href="javascript:;" class="add_goods" id="add_goods" title="加入购物车"></a>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{##}
+{#                <div class="pagenation">#}
+{#                    {% if page.has_previous %}#}
+{#                        <a href="/search/?q={{ query }}&amp;page={{ page.previous_page_number }}"><上一页</a>#}
+{#                    {% endif %}#}
+{##}
+{#                    {% for p in page.paginator.page_range %}#}
+{#                        {% if page.number == p %}#}
+{#                            <a href="/search/?q={{ query }}&amp;page={{ p }}" class="active">{{ p }}</a>#}
+{#                        {% else %}#}
+{#                            <a href="/search/?q={{ query }}&amp;page={{ p }}">{{ p }}</a>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{##}
+{#                    {% if page.has_next %}#}
+{#                        <a href="/search/?q={{ query }}&amp;page={{ page.next_page_number }}"><上一页</a>#}
+{#                    {% endif %}#}
+{#                </div>#}
 {#            </div>#}
-{#        </li>#}
-{#    {% endfor %}#}
-{##}
-{#    <div class="pagenation">#}
-{#        {% if page.has_previous %}#}
-{#            <a href="{{ page.previous_page_number }}"><上一页</a>#}
-{#        {% endif %}#}
-{##}
-{#        {% for p in page.paginator.page_range %}#}
-{#            {% if page.number == p %}#}
-{#                <a href="{{ p }}" class="active">{{ p }}</a>#}
-{#            {% else %}#}
-{#                <a href="{{ p }}">{{ p }}</a>#}
-{#            {% endif %}#}
-{#        {% endfor %}#}
-{##}
-{#        {% if page.has_next %}#}
-{#            <a href="{{ page.next_page_number }}">下一页></a>#}
-{#        {% endif %}#}
-{#    </div>#}
+{#        </div>#}
 {##}
 {#{% if query %}#}
 {#    <h3>搜索结果如下：</h3>#}
@@ -122,3 +118,4 @@
 {#        </div>#}
 {#    {% endif %}#}
 {#{% endif %}#}
+{% endblock body %}
