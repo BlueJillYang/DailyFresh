@@ -6,11 +6,15 @@
         $(function () {
             //alert($('.add_goods').attr('title'));
             $('.add_goods').click(function () {
-                goods_id=$(this).parents('.operate').attr('id');
-                $.get('/cart/add'+goods_id+'_1', function (data) {
-                    alert('添加成功');
-                    $('#show_count').html(data.count1);
-                });
+                if($('#username1').text()){
+                    goods_id=$(this).parents('.operate').attr('id');
+                    $.get('/cart/add'+goods_id+'_1', function (data) {
+                        alert('添加成功');
+                        $('#show_count').html(data.count1);
+                    });
+                }else {
+                    alert('请先登录');
+                }
             });
         });
     </script>

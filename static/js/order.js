@@ -18,4 +18,9 @@ $(function () {
     $('#order_btn').click(function () {
         confirm('是否前往支付页面');
     });
+
+    $('.pay_style_con').click(function () {
+        alert('Sorry, 暂时无法完成支付接口');
+    });
+
 });

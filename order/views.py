@@ -62,7 +62,7 @@ def create(request):
     try:
         # order信息
         now = datetime.now()
-        order.oid = int(now.strftime('%Y%m%d%H%M%S')[5:] + str(uid))
+        order.oid = int(now.strftime('%Y%m%d%H%M%S')[4:7] + now.strftime('%Y%m%d%H%M%S')[-6:] + str(uid)[-1])
         order.user_id = users.id
         order.odata = now
         order.oIsPay = True

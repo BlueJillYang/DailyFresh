@@ -145,7 +145,7 @@ def user_center_order(request):
     uname = request.session.get('uname', '')
     user1 = UserInfo.objects.get(username=uname)
     uid = user1.id
-    order = OrderInfo.objects.filter(user_id=uid).order_by('-oid')  # 查询用户的订单 复数
+    order = OrderInfo.objects.filter(user_id=uid).order_by('-odata')  # 查询用户的订单 复数
     # 页数 paginator
     paginator = Paginator(order, 2)
     page = paginator.page(1)
@@ -156,7 +156,7 @@ def user_center_order(request):
 def user_center_order_handle(request, pagenumber):
     uname = request.session.get('uname', '')
     uid = UserInfo.objects.get(username=uname).id
-    order = OrderInfo.objects.filter(user_id=uid).order_by('-oid')  # 查询用户的订单 复数
+    order = OrderInfo.objects.filter(user_id=uid).order_by('-odata')  # 查询用户的订单 复数
     # 页数 paginator
     paginator = Paginator(order, 2)
     pagenumber = int(pagenumber)
@@ -201,6 +201,7 @@ def user_center_site_handle(request):
     addr.user_id = user.id
     addr.save()
     return redirect('/user_center_site/')
+
 
 def exit_handle(request):
     uname = request.session.get('uname', '')
