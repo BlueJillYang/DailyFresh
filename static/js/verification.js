@@ -63,4 +63,14 @@ $(function () {
             }
         }
     });
+    $('.cart_name').click(function () {
+        if($('#username1').text()==''){
+            if(confirm('请先登录,是否继续前往登录页面')){
+                $('.cart_name').prop('href', '/login/');
+                submit();
+            }else {
+                return false;
+            }
+        }
+    });
 });
