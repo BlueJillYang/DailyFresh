@@ -4,7 +4,7 @@ $(function(){
 	var error_password = true;
 	var error_check_password = true;
 	var error_email = true;
-	var error_check = true;
+	var error_check = false;
 
 
 	$('#user_name').blur(function() {
@@ -129,7 +129,7 @@ $(function(){
 	}
 
 
-	$('#sub1').click(function() {
+	$('#reg_form').submit(function() {
 		check_user_name();
 		check_pwd();
 		check_cpwd();
@@ -137,10 +137,12 @@ $(function(){
 
 		if(error_name == false && error_password == false && error_check_password == false && error_email == false && error_check == false)
 		{
+			alert('注册成功,即将转到登录页面');
 			return true;
 		}
 		else
 		{
+			alert('注册信息有误');
 			return false;
 		}
 
