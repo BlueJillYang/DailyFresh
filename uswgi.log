@@ -628,3 +628,225 @@ worker 2 buried after 1 seconds
 worker 3 buried after 1 seconds
 worker 4 buried after 1 seconds
 goodbye to uWSGI.
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Oct  3 23:28:42 2018] ***
+compiled with version: 7.3.0 on 03 October 2018 05:07:24
+os: Linux-4.15.0-36-generic #39-Ubuntu SMP Mon Sep 24 16:19:09 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/pytest/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/py_django/bin/uwsgi
+chdir() to /home/python/Desktop/pytest/dailyfresh
+your processes number limit is 15449
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Oct  3 23:33:45 2018] ***
+compiled with version: 7.3.0 on 03 October 2018 05:07:24
+os: Linux-4.15.0-36-generic #39-Ubuntu SMP Mon Sep 24 16:19:09 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/pytest/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/py_django/bin/uwsgi
+chdir() to /home/python/Desktop/pytest/dailyfresh
+your processes number limit is 15449
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Oct  3 23:37:30 2018] ***
+compiled with version: 7.3.0 on 03 October 2018 05:07:24
+os: Linux-4.15.0-36-generic #39-Ubuntu SMP Mon Sep 24 16:19:09 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/pytest/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/py_django/bin/uwsgi
+chdir() to /home/python/Desktop/pytest/dailyfresh
+your processes number limit is 15449
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Oct  3 23:40:34 2018] ***
+compiled with version: 7.3.0 on 03 October 2018 05:07:24
+os: Linux-4.15.0-36-generic #39-Ubuntu SMP Mon Sep 24 16:19:09 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/pytest/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/py_django/bin/uwsgi
+chdir() to /home/python/Desktop/pytest/dailyfresh
+your processes number limit is 15449
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Oct  3 23:42:31 2018] ***
+compiled with version: 7.3.0 on 03 October 2018 05:07:24
+os: Linux-4.15.0-36-generic #39-Ubuntu SMP Mon Sep 24 16:19:09 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/pytest/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/py_django/bin/uwsgi
+chdir() to /home/python/Desktop/pytest/dailyfresh
+your processes number limit is 15449
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+bind(): Cannot assign requested address [core/socket.c line 769]
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Oct  3 23:48:56 2018] ***
+compiled with version: 7.3.0 on 03 October 2018 05:07:24
+os: Linux-4.15.0-36-generic #39-Ubuntu SMP Mon Sep 24 16:19:09 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/pytest/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/py_django/bin/uwsgi
+chdir() to /home/python/Desktop/pytest/dailyfresh
+your processes number limit is 15449
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.253.207:8000 fd 3
+Python version: 2.7.15rc1 (default, Apr 15 2018, 21:51:34)  [GCC 7.3.0]
+Python main interpreter initialized at 0x5651460cb240
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 9 seconds on interpreter 0x5651460cb240 pid: 11970 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11970)
+spawned uWSGI worker 1 (pid: 11974, cores: 2)
+spawned uWSGI worker 2 (pid: 11975, cores: 2)
+spawned uWSGI worker 3 (pid: 11976, cores: 2)
+spawned uWSGI worker 4 (pid: 11977, cores: 2)
+[pid: 11975|app: 0|req: 1/1] 192.168.253.207 () {40 vars in 664 bytes} [Wed Oct  3 15:49:12 2018] GET / => generated 15934 bytes in 977 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 11975|app: 0|req: 2/2] 192.168.253.207 () {38 vars in 651 bytes} [Wed Oct  3 15:49:13 2018] GET /favicon.ico => generated 85 bytes in 308 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 11977|app: 0|req: 1/3] 192.168.253.207 () {38 vars in 591 bytes} [Wed Oct  3 15:49:14 2018] GET /favicon.ico => generated 85 bytes in 8362 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 11977|app: 0|req: 2/4] 192.168.253.207 () {42 vars in 739 bytes} [Wed Oct  3 15:49:27 2018] GET /user_center_order/ => generated 0 bytes in 1 msecs (HTTP/1.1 302) 6 headers in 191 bytes (1 switches on core 1)
+[pid: 11975|app: 0|req: 3/5] 192.168.253.207 () {44 vars in 755 bytes} [Wed Oct  3 15:49:27 2018] GET /login/ => generated 2879 bytes in 99 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 11975|app: 0|req: 4/6] 192.168.253.207 () {44 vars in 843 bytes} [Wed Oct  3 15:49:28 2018] GET /register/ => generated 2669 bytes in 21 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 11974|app: 0|req: 1/7] 192.168.253.207 () {44 vars in 827 bytes} [Wed Oct  3 15:49:31 2018] GET /register_exist/?uname=123123 => generated 12 bytes in 2337 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 11977|app: 0|req: 3/8] 192.168.253.207 () {44 vars in 827 bytes} [Wed Oct  3 15:49:41 2018] GET /register_exist/?uname=123123 => generated 12 bytes in 170 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 11974|app: 0|req: 2/9] 192.168.253.207 () {44 vars in 827 bytes} [Wed Oct  3 15:49:47 2018] GET /register_exist/?uname=123123 => generated 12 bytes in 92 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 11975|app: 0|req: 6/11] 192.168.253.207 () {44 vars in 840 bytes} [Wed Oct  3 15:49:48 2018] GET /login/ => generated 2879 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 11975|app: 0|req: 6/11] 192.168.253.207 () {48 vars in 977 bytes} [Wed Oct  3 15:49:48 2018] POST /register_handle/ => generated 0 bytes in 369 msecs (HTTP/1.1 302) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 11976|app: 0|req: 1/12] 192.168.253.207 () {48 vars in 968 bytes} [Wed Oct  3 15:49:53 2018] POST /login_handle/ => generated 0 bytes in 1685 msecs (HTTP/1.1 302) 6 headers in 230 bytes (1 switches on core 0)
+[pid: 11975|app: 0|req: 7/13] 192.168.253.207 () {44 vars in 905 bytes} [Wed Oct  3 15:49:55 2018] GET /user_center_order/ => generated 3369 bytes in 158 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 11976|app: 0|req: 2/14] 192.168.253.207 () {44 vars in 915 bytes} [Wed Oct  3 15:49:58 2018] GET /user_center_info/ => generated 3379 bytes in 149 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 11976|app: 0|req: 3/15] 192.168.253.207 () {44 vars in 914 bytes} [Wed Oct  3 15:49:59 2018] GET /user_center_site/ => generated 3969 bytes in 53 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 11975|app: 0|req: 8/16] 192.168.253.207 () {44 vars in 904 bytes} [Wed Oct  3 15:50:00 2018] GET /user_center/ => generated 3379 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 11975|app: 0|req: 9/17] 192.168.253.207 () {44 vars in 911 bytes} [Wed Oct  3 15:50:02 2018] GET /user_center_order/ => generated 3369 bytes in 63 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 11976|app: 0|req: 4/18] 192.168.253.207 () {44 vars in 891 bytes} [Wed Oct  3 15:50:07 2018] GET /exit/ => generated 0 bytes in 99 msecs (HTTP/1.1 302) 6 headers in 218 bytes (1 switches on core 1)
+[pid: 11976|app: 0|req: 5/19] 192.168.253.207 () {44 vars in 893 bytes} [Wed Oct  3 15:50:07 2018] GET /index/ => generated 15934 bytes in 131 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Oct  3 23:52:05 2018] ***
+compiled with version: 7.3.0 on 03 October 2018 05:07:24
+os: Linux-4.15.0-36-generic #39-Ubuntu SMP Mon Sep 24 16:19:09 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/pytest/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/py_django/bin/uwsgi
+chdir() to /home/python/Desktop/pytest/dailyfresh
+your processes number limit is 15449
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.253.207:8000 fd 3
+Python version: 2.7.15rc1 (default, Apr 15 2018, 21:51:34)  [GCC 7.3.0]
+Python main interpreter initialized at 0x556f17405240
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x556f17405240 pid: 12030 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 12030)
+spawned uWSGI worker 1 (pid: 12032, cores: 2)
+spawned uWSGI worker 2 (pid: 12033, cores: 2)
+spawned uWSGI worker 3 (pid: 12034, cores: 2)
+spawned uWSGI worker 4 (pid: 12035, cores: 2)
+[pid: 12033|app: 0|req: 1/1] 192.168.253.1 () {38 vars in 594 bytes} [Wed Oct  3 15:52:37 2018] GET / => generated 15934 bytes in 210 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 2/2] 192.168.253.1 () {34 vars in 564 bytes} [Wed Oct  3 15:52:45 2018] GET /favicon.ico => generated 85 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+./goods/views.py:90: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'goods.models.GoodsInfo'> QuerySet.
+  paginator = Paginator(list, 5)
+[pid: 12033|app: 0|req: 3/3] 192.168.253.1 () {40 vars in 651 bytes} [Wed Oct  3 15:53:29 2018] GET /list_3_0/ => generated 6377 bytes in 144 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 4/4] 192.168.253.1 () {38 vars in 594 bytes} [Wed Oct  3 15:53:31 2018] GET / => generated 15934 bytes in 89 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 12033|app: 0|req: 5/5] 192.168.253.1 () {40 vars in 651 bytes} [Wed Oct  3 15:53:34 2018] GET /list_1_0/ => generated 7485 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 6/6] 192.168.253.1 () {40 vars in 662 bytes} [Wed Oct  3 15:53:37 2018] GET /list_1_0/2 => generated 7531 bytes in 86 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 12033|app: 0|req: 7/7] 192.168.253.1 () {40 vars in 663 bytes} [Wed Oct  3 15:53:38 2018] GET /list_1_0/3 => generated 7543 bytes in 51 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 8/8] 192.168.253.1 () {40 vars in 663 bytes} [Wed Oct  3 15:53:38 2018] GET /list_1_0/4 => generated 5979 bytes in 90 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 12033|app: 0|req: 9/9] 192.168.253.1 () {40 vars in 663 bytes} [Wed Oct  3 15:53:40 2018] GET /list_1_0/1 => generated 7485 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 10/10] 192.168.253.1 () {40 vars in 655 bytes} [Wed Oct  3 15:53:42 2018] GET /index/ => generated 15934 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.290 seconds.
+Prefix dict has been built succesfully.
+[pid: 12033|app: 0|req: 11/11] 192.168.253.1 () {40 vars in 657 bytes} [Wed Oct  3 15:56:07 2018] GET /detail/19 => generated 7893 bytes in 678 msecs (HTTP/1.1 200) 5 headers in 159 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 12/12] 192.168.253.1 () {42 vars in 679 bytes} [Wed Oct  3 15:56:11 2018] GET /cart/ => generated 0 bytes in 0 msecs (HTTP/1.1 302) 6 headers in 178 bytes (1 switches on core 1)
+[pid: 12035|app: 0|req: 1/13] 192.168.253.1 () {42 vars in 695 bytes} [Wed Oct  3 15:56:11 2018] GET /login/ => generated 2879 bytes in 108 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 13/14] 192.168.253.1 () {48 vars in 929 bytes} [Wed Oct  3 15:56:19 2018] POST /login_handle/ => generated 0 bytes in 39 msecs (HTTP/1.1 302) 6 headers in 217 bytes (1 switches on core 1)
+[pid: 12035|app: 0|req: 2/15] 192.168.253.1 () {44 vars in 840 bytes} [Wed Oct  3 15:56:19 2018] GET /cart/ => generated 3375 bytes in 115 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 12033|app: 0|req: 14/16] 192.168.253.1 () {42 vars in 799 bytes} [Wed Oct  3 15:56:23 2018] GET / => generated 15942 bytes in 116 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 15/17] 192.168.253.1 () {42 vars in 828 bytes} [Wed Oct  3 15:56:29 2018] GET /user_center_info/ => generated 3779 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 12032|app: 0|req: 1/18] 192.168.253.1 () {42 vars in 847 bytes} [Wed Oct  3 15:56:30 2018] GET /user_center_order/ => generated 5709 bytes in 173 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 12032|app: 0|req: 2/19] 192.168.253.1 () {42 vars in 864 bytes} [Wed Oct  3 15:56:32 2018] GET /user_center_order_handle/2 => generated 5805 bytes in 39 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 12033|app: 0|req: 16/20] 192.168.253.1 () {42 vars in 872 bytes} [Wed Oct  3 15:56:33 2018] GET /user_center_order_handle/3 => generated 4731 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 17/21] 192.168.253.1 () {42 vars in 854 bytes} [Wed Oct  3 15:56:34 2018] GET /user_center_site/ => generated 3991 bytes in 24 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 12032|app: 0|req: 3/22] 192.168.253.1 () {42 vars in 823 bytes} [Wed Oct  3 15:56:35 2018] GET /index/ => generated 15942 bytes in 56 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.235 seconds.
+Prefix dict has been built succesfully.
+[pid: 12032|app: 0|req: 4/23] 192.168.253.1 () {42 vars in 816 bytes} [Wed Oct  3 15:56:46 2018] GET /detail/5 => generated 7903 bytes in 356 msecs (HTTP/1.1 200) 5 headers in 166 bytes (1 switches on core 1)
+[pid: 12033|app: 0|req: 18/24] 192.168.253.1 () {44 vars in 825 bytes} [Wed Oct  3 15:56:49 2018] GET /cart/add5_2 => generated 13 bytes in 131 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 12033|app: 0|req: 19/25] 192.168.253.1 () {42 vars in 819 bytes} [Wed Oct  3 15:56:50 2018] GET /cart/ => generated 4205 bytes in 70 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 12033|app: 0|req: 20/26] 192.168.253.1 () {44 vars in 826 bytes} [Wed Oct  3 15:56:52 2018] GET /cart/edit5_2/ => generated 9 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 113 bytes (1 switches on core 0)
+[pid: 12032|app: 0|req: 5/27] 192.168.253.1 () {42 vars in 837 bytes} [Wed Oct  3 15:56:52 2018] GET /order/?cart_id=5 => generated 5146 bytes in 101 msecs (HTTP/1.1 200) 5 headers in 199 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
